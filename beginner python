@@ -1,0 +1,42 @@
+#Code to display student's subject,score and remark 
+
+#i created a function from the earlier classwork
+def Scheck(score):
+   
+    score= int(score)
+    if score >= 0 and score <= 39:
+        print ( "Transfer to agric, fast, [F]! ")
+    elif score >= 40 and score <= 45:
+        print ("You suppose to be a dinner man!, [E]")
+    elif score >= 46 and score <= 49:
+        print ("Academic danger with a capital, [D]")
+    elif score >= 50 and score <= 59:
+        print ("no comment, [C]")
+    elif score >= 60 and score <= 79:
+        print ("Better luck next time, [B]!")
+    elif score >=80 and score <=100:
+        print("school is not a scam afterall [A]")
+    else:
+        print ("Don't lie to yourself")
+
+#I created an empty dictionary to store subject and scores    
+maria= {}
+
+# a loop to collect the subjects and scores until a sentinel is put in
+while True :
+     subject = input("Name of subject?")
+     if subject != "done": # sentinel
+         score= input("The score?")
+         maria.update({subject:score})
+     else:
+         break
+
+sub_list= list(maria.keys())         
+sco_list=list(maria.values())
+
+#Display the name of the subject, score and remark
+i=0
+while i <= len(maria.items())-1:
+    Scheck(sco_list[i])
+    print(sub_list[i],"," , sco_list[i],)
+    i+=1
